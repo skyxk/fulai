@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+	<title>魏县福来食用菌专业合作社</title>
+	<meta name="keywords" content="魏县福来食用菌专业合作社"/>
+	<meta name="description" content="魏县福来食用菌专业合作社"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<!-- 防止IE8,7进入怪异模式 -->
+	<link href="css/style.css" type="text/css" th:herf="@{/css/style.css}" rel="stylesheet"/>
+	<link rel="icon" href="images/favicon.png" th:herf="@{/images/favicon.png}" type="image/gif">
+	<link rel="shortcut icon" href="images/favicon.png" th:herf="@{/images/favicon.png}">
+
+	<script type="text/javascript" src="js/jquery.js" th:src="@{/js/jquery.js}"></script>
+	<script type="text/javascript" src="js/nav.js" th:src="@{/js/nav.js}"></script>
+	<script type="text/javascript" src="js/jquery.superslide.2.1.1.js" th:src="@{/js/jquery.superslide.2.1.1.js}"></script>
+	<script type="text/javascript" src="js/jquery.touchslider.js" th:src="@{/js/jquery.touchslider.js}" ></script>
+
+	<!--控制banner切换效果-->
+	<script type="text/javascript">
+	$(document).ready(function () {
+		$(".main_visual").hover(function(){
+			$("#btn_prev,#btn_next").fadeIn()
+			},function(){
+			$("#btn_prev,#btn_next").fadeOut()
+			})
+		$dragBln = false;
+		$(".main_image").touchSlider({
+			flexible : true,
+			speed : 200,
+			btn_prev : $("#btn_prev"),
+			btn_next : $("#btn_next"),
+			paging : $(".flicking_con a"),
+			counter : function (e) {
+				$(".flicking_con a").removeClass("on").eq(e.current-1).addClass("on");
+			}
+		});
+		$(".main_image").bind("mousedown", function() {
+			$dragBln = false;
+		})
+		$(".main_image").bind("dragstart", function() {
+			$dragBln = true;
+		})
+		$(".main_image a").click(function() {
+			if($dragBln) {
+			 return false;
+			}
+		})
+		timer = setInterval(function() { $("#btn_next").click();}, 4000);
+		$(".main_visual").hover(function() {
+			clearInterval(timer);
+		}, function() {
+			timer = setInterval(function() { $("#btn_next").click();}, 4000);
+		})
+		$(".main_image").bind("touchstart", function() {
+			clearInterval(timer);
+		}).bind("touchend", function() {
+			timer = setInterval(function() { $("#btn_next").click();}, 4000);
+		})
+	});
+	</script>
+
+	</head>
+<body>
+	<script language="javascript">
+		function checkform3(nForm) {
+			if(nForm.keys.value==""||nForm.keys.value=="搜索关键词")
+			{
+				alert("请输入关键字!");
+				nForm.keys.focus();
+				return false;
+			}
+		}
+	</script>
+
+	<script type="text/javascript" src="js/zh.js" th:src="@{/js/zh.js}"></script>
+	<script>
+		//s 简体 t 繁体
+		zh_tran('s');
+
+	</script>
+
+<div class="top_bg">
+	<div class="menu b_center">
+		<div class="logo_l">
+			<br/>
+			<br/>
+			<a href="index.html" style="font-size: x-large;color: #0d6f67;">魏县福来食用菌专业合作社</a>
+		</div>
+		<div class="logo_r">
+			<div class="nav">
+				<ul>
+					<li class="m on">
+					<h3><a href="index.html" title="首页">首页</a></h3>
+					</li>
+					<li class="m ">
+					<h3><a href="about.html" title="关于我们">关于我们</a></h3>
+					<li class="m ">
+					<h3><a href="news.html" title="公司动态">公司动态</a></h3>
+					</li>
+					<li class="m ">
+					<h3><a href="products.html" title="产品展示">产品展示</a></h3>
+					</li>
+					<li class="m ">
+					<h3><a href="case.html" title="资质荣誉">资质荣誉</a></h3>
+					</li>
+					<li class="m ">
+					<h3><a href="contact.html" title="联系我们">联系我们</a></h3>
+					</li>
+				</ul>
+				<script type="text/javascript"> jQuery(".nav").slide({ type:"menu",  titCell:".m", targetCell:".sub", effect:"slideDown", delayTime:300, triggerTime:100,returnDefault:true});</script>
+			</div>
+		</div>
+		<!-- clear the floats if required -->
+		<div class="clear">
+		</div>
+	</div>
+</div>
+<!--header_100 end-->
+<div class="h84">
+	&nbsp;
+</div>
+<!--banner star-->
+<div class="main_visual">
+	<div class="flicking_con">
+		<div class="flicking_inner">
+			<a href="#">1</a>
+			<a href="#">2</a>
+			<a href="#">3</a>
+		</div>
+	</div>
+	<!--flicking_con end-->
+	<div class="main_image">
+		<ul>
+			<li><span style="background:url(images/banner_00.jpg) no-repeat center top;"><a href="#"></a></span></li>
+			<li><span style="background:url(images/2016101712030875875.jpg) no-repeat center top;"><a href="#"></a></span></li>
+			<li><span style="background:url(images/20161017120327032703.jpg) no-repeat center top;"><a href="#"></a></span></li>
+		</ul>
+		<a href="#" id="btn_prev"></a>
+		<a href="#" id="btn_next"></a>
+	</div>
+	<!--main_image end-->
+</div>
+<!--banner end--><!--正文begin--><!--我们的服务begin-->
+<div class="i_service" style="background:url(images/i_ongbg.jpg) #fff center top no-repeat;">
+	<div class="i_service_t">
+		ABOUT_US
+		<h2>公司的<span>简介</span></h2>
+	</div>
+	<div class="i_service_desc">
+		　魏县福来食用菌专业合作社由刘瑞芹、苗银德等人发起，于2007年12月8日召开设立大会，于2008年1月16日正式注册，成员组成全部是农民，出资人数为56人，总金额为102万元，其中货币出资36万元，非货币出资66万元，
+		收益分配机制是按出资数额比例盈利分红。本社以成员为主要服务对象，依法为成员提供农业生产资料的购买，农产品的销售、加工、运输、贮藏以及与农业生产经营有关的技术、信息等服务。
+	</div>
+	<div class="wrap">
+		<ul class="i_service_ul">
+			<li onmouseover="$(this).find('img').attr('src','images/i_pic1_sel.png')" onmouseout="$(this).find('img').attr('src','images/i_pic1.png')"><a href="#"><img th:src="@{/picture/i_pic1.png}"/>
+			<h2>猴头菇</h2>
+			<p>
+				猴头菇，又叫猴头菌，只因外形酷似猴头而得名。猴蘑，猴头，猴菇，是中国传统的名贵菜肴，肉嫩、味香、鲜美可口。是四大名菜（猴头、熊掌、燕窝、鱼翅）之一。有“山珍猴头、海味鱼翅”之称。猴头菌是鲜美无比的山珍，
+				菌肉鲜嫩，香醇可口，有“素中荤”之称。 作为食用菌王国的珍品 , 猴头菇属于药食两用真菌 , 尤其是其医药方面的药用价值，受到广大消费者的青睐，具有健脾养胃、安神、抗癌的功效 , 对体虚乏力、消化不良、失眠、
+				胃与十二指肠溃疡、慢性胃炎、消化道肿瘤等症有特效。
+			</p>
+			</a></li>
+			<li onmouseover="$(this).find('img').attr('src','images/i_pic2_sel.png')" onmouseout="$(this).find('img').attr('src','images/i_pic2.png')"><a href="#"><img th:src="@{/picture/i_pic2.png}"/>
+			<h2>白灵菇</h2>
+			<p>
+				白灵菇(Pleurotus ferulae Lanzi)又名阿魏蘑、阿魏菇、阿魏蘑菇、白阿魏蘑、 阿魏侧耳，白灵菇为掌状阿魏菇的商品名，以其形状近似灵芝，全身为纯白色故称白灵菇，
+				它是一种野生名贵食(药)用菌。白灵菇菇体色泽洁白、肉质细腻、味道鲜美，是一种食用和药用价值都很高的珍稀食用菌。
+			</p>
+			</a></li>
+			<li onmouseover="$(this).find('img').attr('src','images/i_pic3_sel.png')" onmouseout="$(this).find('img').attr('src','images/i_pic3.png')"><a href="#"><img th:src="@{/picture/i_pic3.png}"/>
+			<h2>平菇</h2>
+			<p>
+				平菇属木腐生菌类。菌丝通过分泌多种酶，能将纤维素、半纤维素、木质素及淀粉、果胶等成分分解成单糖或双糖等营养物，作为碳源被吸收利用，还可直接吸收有机酸和醇类等，
+				但不能直接利用无机碳。平菇以无机氮(铵盐、硝酸盐等)和有机氮化合物(尿素、氨基酸、蛋白质等)作为氮源。 蛋白质要通过蛋白酶分解，变成氨基(不同性别)酸后才能被吸收利用。
+			</p>
+			</a></li>
+		</ul>
+	</div>
+</div>
+<!--我们的服务end--><!--我们的产品begin-->
+<div class="i_product">
+	<div class="i_service_t" style="padding-top:36px;">
+		PRODUCTS
+		<h2>我们的<span>产品</span></h2>
+	</div>
+	<div class="M_7">
+		<div class="slideTxtBox3">
+			<div class="parBd">
+				<div class="picScroll-left2">
+					<div class="hd cd">
+						<a class="sNext"></a>
+						<a class="sPrev"></a>
+					</div>
+					<div class="bd dd">
+						<div style=" position: relative; width: 1084px;" class="tempWrap">
+							<ul class="picList" style="width: 1298px; left: 0px; position: relative; padding: 0pt; margin: 0pt; overflow:visible;">
+								<li>
+									<a href="#" title="">
+									<div class="img">
+										<img th:src="@{/picture/2013082311244242215.jpg}" alt="广温型平菇品种"/>
+									</div>
+									<div class="txt2">
+										<em>查看更多</em>
+									</div>
+									<div class="txt3">
+										广温型平菇品种（适低温）
+									</div>
+									</a>
+								</li>
+								<li>
+									<a href="#" title="白灵菇鲜菇">
+									<div class="img">
+										<img th:src="@{/picture/2013082019051068072.jpg}" alt="白灵菇鲜菇"/>
+									</div>
+									<div class="txt2">
+										<em>查看更多</em>
+									</div>
+									<div class="txt3">
+										白灵菇鲜菇
+									</div>
+									</a>
+								</li>
+								<li>
+									<a href="#" title="平菇鲜菇">
+										<div class="img">
+											<img th:src="@{/picture/2013082019160376280.jpg}" alt="平菇鲜菇"/>
+										</div>
+										<div class="txt2">
+											<em>查看更多</em>
+										</div>
+										<div class="txt3">
+											平菇鲜菇
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#" title="菌种">
+										<div class="img">
+											<img th:src="@{/picture/2013082100360150931.jpg}" alt="菌种"/>
+										</div>
+										<div class="txt2">
+											<em>查看更多</em>
+										</div>
+										<div class="txt3">
+											菌种
+										</div>
+									</a>
+								</li>
+
+								<li>
+									<a href="#" title="低温平菇品种">
+										<div class="img">
+											<img th:src="@{/picture/2013082311252026093.jpg}" alt="低温平菇品种"/>
+										</div>
+										<div class="txt2">
+											<em>查看更多</em>
+										</div>
+										<div class="txt3">
+											低温平菇品种
+										</div>
+									</a>
+								</li>
+
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--我们的产品end--><!--公司动态begin-->
+<div class="i_service_t" style="padding-top:36px;">
+		NEWS
+	<h2>公司<span>动态</span></h2>
+</div>
+<div class="wrap m_t30">
+	<div class="i_about_l">
+		<img th:src="@{/picture/20170110155846284628.jpg}" alt=""/>
+		<h2>中式和日式庭院的比較分析</h2>
+		<p>
+			中國傳統的庭院規劃深受傳統哲學和繪畫的影響，甚至有“繪畫乃造園之母”的理論，最具參考性的是明清兩代的江南私家園林。江南私家園林重視寓
+		</p>
+		<a href="#" class="i_about_more"></a>
+	</div>
+	<div class="i_about_r">
+		<ul class="blog_list">
+			<li>
+			<a href="#" title="白灵菇鲜菇礼盒预定销售">
+			<span class="blog_Rtime l">
+			<b>10</b>
+			<em>2017-01</em>
+			</span>
+			<span class="blog_Rmore r">
+			<b>白灵菇鲜菇礼盒预定销售</b>
+			<span>白灵菇是一种食用和药用价值都很高的珍稀食用菌。其菇体色泽洁白、肉质细腻、味道鲜美。白灵菇营养丰富，据科学测定，其蛋白质含量占干菇的20%，含有17种氨基酸，多种维生素和无机盐。</span>
+			</span>
+			</a>
+			</li>
+
+			<li>
+			<a href="#" title="2013年供应优质菌种栽培种，欢迎咨询和预定">
+			<span class="blog_Rtime l">
+			<b>14</b>
+			<em>2016-10</em>
+			</span>
+			<span class="blog_Rmore r">
+			<b>2013年供应优质菌种栽培种，欢迎咨询和预定</b>
+			<span> 魏县福来食用菌专业合作社，专业技术咨询，供应优质菌种，服务广大菇农。经理苗银德先生，兼任河北魏县院堡食用菌试验场场长，从事食用菌行业近30年</span>
+			</span>
+			</a>
+			</li>
+
+			<li>
+			<a href="#" title="食用菌三级菌种">
+			<span class="blog_Rtime l">
+			<b>14</b>
+			<em>2016-10</em>
+			</span>
+			<span class="blog_Rmore r">
+			<b>食用菌三级菌种</b>
+			<span>食用菌菌种一般分母种、原种和栽培种。母种是食用菌菌种的一级菌种，是直接从子实体(组织或孢子)、菇木(耳木)分离得到的菌种。</span>
+			</span>
+			</a>
+			</li>
+		</ul>
+	</div>
+	<div class="c_l">
+	</div>
+</div>
+<!--公司动态end--><!--正文end--><!--尾部begin-->
+<div class="foot_txt">
+	<div class="wrap" style="position:relative;">
+	ADD：KAM TIN NT HONKONG  客服电话：0760-23864215/13249692869
+		<br/>
+		<a href="#" title="关于我们" class="foot_title">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="#" title="公司动态">公司动态</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="#" title="产品展示">产品展示</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="#" title="工程案例">工程案例</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="#" title="视频中心">视频中心</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+		<a href="#" title="联系我们">联系我们</a>
+		<a href="#" class="f_top" onclick="goTop()">&nbsp;</a>
+	</div>
+</div>
+<div class="f_bg">
+	<div class="b_center" style="width:1200px;">
+		<span class="l">Copyright © 魏县福来食用菌专业合作社 All Rights Reserved </a>&nbsp;&nbsp;</span>
+		<div class="contact_a">
+			<ul>
+				<li><a href="#" class="foot_qq"></a></li>
+				<li><a href="#" class="foot_weixin"><img src="/picture/ewm.png" th:src="@{/picture/ewm.png}"/></a></li>
+			</ul>
+		</div>
+		<div class="c_l">
+		</div>
+	</div>
+</div>
+<!--尾部end-->
+<script language="javascript" src="js/foot.js" th:src="@{/js/foot.js}"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+server:
+  port: 8090
+#  servlet:
+#    context-path: /fulai
+
+mybatis:
+  #mybatis的xml文件配置 没有此项配置则为注解模式
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.fulai.mushroom.entity
+
+spring:
+  #数据源配置
+#  datasource:
+#    username: root
+#    password: root
+#    url: jdbc:mysql://localhost:3306/fulai?useSSL=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&amp
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+  #腾讯云数据库
+  datasource:
+    username: root
+    password: cltess
+    url: jdbc:mysql://192.144.176.134:3306/fulai?useSSL=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8&amp
+    driver-class-name: com.mysql.jdbc.Driver
+  aop:
+    proxy-target-class: true
+    auto: true
+  thymeleaf:
+    cache: false
+  resources:
+    static-locations: classpath:/static/,classpath:/META-INF/resources/,classpath:/resources/,classpath:/public/,file:${myConfig.pdfPath}
+  devtools:
+    restart:
+      #需要实时更新的目录
+      additional-paths: resources/**,static/**,templates/**
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
+# slf4j日志配置
+logging:
+  # 配置级别
+  level:
+    #分包配置级别，即不同的目录下可以使用不同的级别
+    root: info
+  # 指定输出日志的文件名，默认输出至当前项目目录下
+  file: e:/essplatform.log
+
+#    thymeleaf:
+#      cache: false
+#      prefix: classpath:/templates/
+#      suffix: .html
+#      encoding: UTF-8
+#      content-type: text/html
+#      mode: HTML5
+
+#myConfig:
+#  pdfPath: D:/pdf/

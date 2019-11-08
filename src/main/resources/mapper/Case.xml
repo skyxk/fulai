@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fulai.mushroom.dao.CaseMapper">
+
+    <resultMap type="Case" id="CaseMap">
+        <id property="CId" column="CId"/>
+        <result property="title" column="title"/>
+        <result property="imgBase64" column="imgBase64"/>
+    </resultMap>
+
+    <select id="findCase" resultMap="CaseMap">
+        SELECT * FROM c_case
+    </select>
+
+</mapper>

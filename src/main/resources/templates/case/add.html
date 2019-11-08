@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员界面</title>
+</head>
+<body>
+
+
+<div style="margin-left: 100px">
+    <h3>添加产品 </h3>
+    <div >
+        <input type="file"  id="pro_file">
+    </div>
+    <br>
+    <span>名称:</span><input id="proName" style="width: 400px" />
+    <br/>
+    <span>简介:</span>
+    <br/>
+    <textarea id="proContent" rows="25" cols="80"></textarea>
+    <button id="proUpload" style="width: 150px">上传</button>
+</div>
+
+
+<script >
+
+    $("#proUpload").click(function () {
+        var formData = new FormData();
+        formData.append("pro_file",$('#pro_file')[0].files[0]);
+        formData.append("proName",$('#proContent')[0].files[0]);
+        formData.append("proContent",$('#proContent')[0].files[0]);
+        $.ajax({
+            url:'/pdfsigntest/upload.do',
+            dataType:'text',
+            type:'POST',
+            async: false,
+            data: formData,
+            processData : false, // 使数据不做处理
+            contentType : false, // 不要设置Content-Type请求头
+            success: function(data){
+
+                $("#documentCode").val(data);
+            },
+            error:function(response){
+                console.log(response);
+            }
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
